@@ -1,4 +1,4 @@
-/* RESET & BASE */
+
 * {
   margin: 0;
   padding: 0;
@@ -16,7 +16,7 @@ body {
   line-height: 1.6;
 }
 
-/* NAVBAR */
+
 nav {
   position: sticky;
   top: 0;
@@ -56,15 +56,10 @@ nav {
   width: 100%;
 }
 
-/* HERO */
+
 .hero {
-  min-height: 70vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  padding: 60px 20px 40px;
   text-align: center;
-  padding: 60px 20px;
 }
 
 .hero h1 {
@@ -77,18 +72,38 @@ nav {
   opacity: 0.85;
 }
 
-.transition {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: letterFade 1.5s ease forwards;
+.hero-about {
+  max-width: 600px;
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 25px;
+  line-height: 1.7;
 }
 
-@keyframes letterFade {
+
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.fade-up.show {
+  animation: fadeUp 0.8s ease forwards;
+}
+
+@keyframes fadeUp {
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
+
+
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+.delay-3 { animation-delay: 0.6s; }
+.delay-4 { animation-delay: 0.8s; }
+
 
 .btn-cv {
   padding: 12px 26px;
@@ -105,7 +120,7 @@ nav {
   transform: translateY(-3px);
 }
 
-/* ABOUT */
+
 .about-card {
   max-width: 1000px;
   margin: 60px auto;
@@ -137,9 +152,10 @@ nav {
 .about-text p {
   font-size: 0.95rem;
   color: #555;
+  line-height: 1.6;
 }
 
-/* SECTIONS */
+
 .section {
   max-width: 900px;
   margin: 80px auto;
@@ -164,7 +180,7 @@ nav {
   border-radius: 2px;
 }
 
-/* SKILLS */
+
 .skills {
   list-style: none;
   display: flex;
@@ -186,7 +202,7 @@ nav {
   transform: translateY(-5px);
 }
 
-/* PROJECTS */
+
 .projects {
   list-style: none;
   max-width: 600px;
@@ -204,7 +220,7 @@ nav {
   font-size: 0.9rem;
 }
 
-/* CONTACT */
+
 .contact-form {
   max-width: 600px;
   margin: 25px auto 0;
@@ -249,7 +265,7 @@ nav {
   font-size: 0.9rem;
 }
 
-/* FOOTER */
+
 footer {
   margin-top: 60px;
   padding: 25px 15px;
@@ -258,37 +274,38 @@ footer {
   color: #555;
 }
 
-/* DESKTOP ENHANCEMENTS */
+
 @media (min-width: 768px) {
-  .hero h1 {
-    font-size: 3rem;
+
+  
+  .hero {
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
-  .hero p {
-    font-size: 1.1rem;
-  }
+  .hero h1 { font-size: 3rem; }
+  .hero p { font-size: 1.1rem; }
 
+  
   .about-card {
     flex-direction: row;
     text-align: left;
     padding: 50px;
   }
 
-  .avatar {
-    width: 160px;
-    height: 160px;
-  }
+  .avatar { width: 160px; height: 160px; }
+  .about-text h2 { font-size: 2rem; }
 
-  .about-text h2 {
-    font-size: 2rem;
-  }
+  
+  .section h2 { font-size: 2rem; }
 
-  .section h2 {
-    font-size: 2rem;
-  }
-
+  
   .skills li {
     font-size: 0.95rem;
     padding: 12px 22px;
   }
+
 }
