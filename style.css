@@ -88,7 +88,7 @@ nav {
 }
 
 .fade-up.show {
-  animation: fadeUp 0.8s ease forwards;
+  animation: fadeUp 4s ease forwards;
 }
 
 @keyframes fadeUp {
@@ -274,6 +274,11 @@ footer {
   color: #555;
 }
 
+#formStatus {
+  margin-top: 15px;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
 
 @media (min-width: 768px) {
 
