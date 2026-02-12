@@ -29,22 +29,24 @@ contactForm.addEventListener("submit", function(event) {
   const userEmail = contactForm.email.value.trim();
   const userMessage = contactForm.message.value.trim();
 
-  
+ 
   if (!userName || !userEmail || !userMessage) {
     formMessage.textContent = "Oops! Please complete all fields.";
     formMessage.style.color = "#e74c3c";
     return;
   }
 
+  
   if (!userEmail.includes("@") || !userEmail.includes(".")) {
     formMessage.textContent = "That email doesn't look valid.";
     formMessage.style.color = "#e74c3c";
     return;
   }
 
- 
+  
   formMessage.textContent = "Thanks! Your message has been sent.";
   formMessage.style.color = "#2ecc71";
 
+  
   contactForm.reset();
 });
