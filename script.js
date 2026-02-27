@@ -1,5 +1,7 @@
 const revealTargets = document.querySelectorAll(".fade-up, .reveal");
 const navLinks = document.querySelectorAll(".nav-links a");
+const nav = document.querySelector("nav");
+const menuToggle = document.getElementById("menuToggle");
 const sections = document.querySelectorAll("section[id]");
 const contactForm = document.getElementById("contactForm");
 const formMessage = document.getElementById("formStatus");
@@ -32,6 +34,24 @@ const sectionObserver = new IntersectionObserver(
 );
 
 sections.forEach((section) => sectionObserver.observe(section));
+
+if (menuToggle && nav) {
+  menuToggle.addEventListener("click", () => {
+    const open = nav.classList.toggle("nav-open");
+    menuToggle.setAttribute("aria-expanded", String(open));
+    menuToggle.textContent = open ? "Close" : "Menu";
+  });
+
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      if (window.innerWidth <= 720) {
+        nav.classList.remove("nav-open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.textContent = "Menu";
+      }
+    });
+  });
+}
 
 if (themeToggle) {
   const savedTheme = localStorage.getItem("portfolio-theme");
