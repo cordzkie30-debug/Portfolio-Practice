@@ -3,13 +3,17 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ray John Cordero | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+  <div class="ambient-bg" aria-hidden="true"></div>
 
-  <!-- NAVBAR -->
   <nav>
     <ul class="nav-links">
       <li><a href="#hero">Home</a></li>
@@ -18,33 +22,24 @@
       <li><a href="#projects">Projects</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle theme">Light</button>
   </nav>
 
-  <!-- HERO -->
-  <section class="hero" id="hero">
-  <h1 class="fade-up delay-1">Ray John Cordero</h1>
+  <section class="hero section" id="hero">
+    <p class="eyebrow fade-up">Available for entry-level roles</p>
+    <h1 class="fade-up delay-1">Ray John Cordero</h1>
+    <p class="fade-up delay-2 hero-role">Aspiring Web Developer | IT Support | Teller</p>
+    <p class="hero-about fade-up delay-3">
+      I build clean, user-friendly interfaces and enjoy solving technical issues through practical, reliable solutions.
+    </p>
+    <div class="hero-actions fade-up delay-4">
+      <a href="RayJohnCordero_Resume.pdf" download class="btn-cv">Download CV</a>
+      <a href="#projects" class="btn-ghost">View Projects</a>
+    </div>
+  </section>
 
-  <p class="fade-up delay-2">
-    Aspiring Web Developer | IT Support | Teller
-  </p>
-
-  <p class="hero-about fade-up delay-3">
-    I am an aspiring web developer and IT support professional who enjoys
-    building clean, user-friendly websites while continuously improving my
-    technical and problem-solving skills.
-  </p>
-
-  <a href="images/RayJohnCordero_Resume.pdf"
-     download
-     class="btn-cv fade-up delay-4">
-     Download CV
-  </a>
-</section>
-
-  <!-- ABOUT -->
-  <section class="about-card" id="about">
-    <img src="images/ray.png" class="avatar" alt="Ray John Cordero">
-
+  <section class="about-card reveal" id="about">
+    <img src="ray.png" class="avatar" alt="Ray John Cordero">
     <div class="about-text">
       <h2>About Me</h2>
       <p>
@@ -52,41 +47,52 @@
         support, as well as hardware and software troubleshooting. I have previously worked in environments where
         problem-solving, attention to detail, and customer assistance were essential. Alongside my technical support
         background, I am continuously building my skills in web development and currently learning HTML, CSS, and
-        JavaScript. I enjoy creating clean, functional, and user-friendly web interfaces while improving my coding
-        fundamentals. I am highly motivated, eager to learn new technologies, and committed to growing my career in IT
-        and web development.
+        JavaScript.
       </p>
+      <div class="stats-row">
+        <article><strong>2+</strong><span>Years IT Support Exposure</span></article>
+        <article><strong>5</strong><span>Core Skills</span></article>
+        <article><strong>100%</strong><span>Growth Mindset</span></article>
+      </div>
     </div>
   </section>
 
-  <!-- SKILLS -->
-  <section class="section skills-section" id="skills">
+  <section class="section skills-section reveal" id="skills">
     <h2>Skills</h2>
     <ul class="skills">
       <li>HTML</li>
       <li>CSS</li>
-      <li>Basic JavaScript</li>
+      <li>JavaScript</li>
       <li>Computer Troubleshooting</li>
       <li>Technical Support</li>
     </ul>
   </section>
 
-  <!-- PROJECTS -->
-  <section class="section projects-section" id="projects">
+  <section class="section projects-section reveal" id="projects">
     <h2>Projects</h2>
-    <ol class="projects">
-      <li>Simple Portfolio Website</li>
-      <li>Soon.......</li>
-      <li>Sooner......</li>
-    </ol>
+    <div class="project-grid">
+      <article class="project-card">
+        <h3>Simple Portfolio Website</h3>
+        <p>Responsive personal portfolio built using HTML, CSS, and JavaScript.</p>
+        <span>HTML / CSS / JS</span>
+      </article>
+      <article class="project-card">
+        <h3>Landing Page Practice</h3>
+        <p>Modern hero layout exploration with responsive grid and hover transitions.</p>
+        <span>CSS Layouts</span>
+      </article>
+      <article class="project-card">
+        <h3>Support Workflow Notes</h3>
+        <p>Documented troubleshooting steps for common software and hardware issues.</p>
+        <span>IT Support</span>
+      </article>
+    </div>
   </section>
 
-  <!-- CONTACT -->
-  <section class="section contact-section" id="contact">
+  <section class="section contact-section reveal" id="contact">
     <h2>Contact Me</h2>
     <p>
-      I’m always open to new opportunities and collaborations. Whether you have a project, a question, or just want
-      to connect, feel free to reach out. <strong>Let’s work together!</strong>
+      I am open to opportunities and collaborations. Send me a message and I will reply as soon as possible.
     </p>
 
     <form class="contact-form" id="contactForm">
@@ -94,19 +100,20 @@
       <input type="email" name="email" placeholder="Your Email" required>
       <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
       <button type="submit">Send Message</button>
-      <p id="formStatus"></p>
+      <p id="formStatus" aria-live="polite"></p>
     </form>
 
     <div class="contact-info">
       <p>Email: <a href="mailto:rayjohn@email.com">rayjohn@email.com</a></p>
-      <p>LinkedIn: <a href="#">linkedin.com/in/rayjohn</a></p>
+      <p>LinkedIn: <a href="https://linkedin.com/in/rayjohn" target="_blank" rel="noopener noreferrer">linkedin.com/in/rayjohn</a></p>
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer>
     <p>&copy; 2026 Ray John Cordero</p>
   </footer>
-<script src="script.js"></script>
+
+  <script src="script.js"></script>
 </body>
+
 </html>
