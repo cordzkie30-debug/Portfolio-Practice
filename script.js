@@ -1,52 +1,76 @@
-
-const fadeElements = document.querySelectorAll(".fade-up");
-
-const scrollObserver = new IntersectionObserver(function(entries) {
-  entries.forEach(function(entry) {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("show");
-    } else {
-      entry.target.classList.remove("show");
-    }
-  });
-}, {
-  threshold: 0.3
-});
-
-fadeElements.forEach(function(element) {
-  scrollObserver.observe(element);
-});
-
-
-
+const revealTargets = document.querySelectorAll(".fade-up, .reveal");
+const navLinks = document.querySelectorAll(".nav-links a");
+const sections = document.querySelectorAll("section[id]");
 const contactForm = document.getElementById("contactForm");
 const formMessage = document.getElementById("formStatus");
+const themeToggle = document.getElementById("themeToggle");
 
-contactForm.addEventListener("submit", function(event) {
-  event.preventDefault();
+const revealObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      }
+    });
+  },
+  { threshold: 0.2 }
+);
 
-  const userName = contactForm.name.value.trim();
-  const userEmail = contactForm.email.value.trim();
-  const userMessage = contactForm.message.value.trim();
+revealTargets.forEach((element) => revealObserver.observe(element));
 
- 
-  if (!userName || !userEmail || !userMessage) {
-    formMessage.textContent = "Oops! Please complete all fields.";
-    formMessage.style.color = "#e74c3c";
-    return;
+const sectionObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      const id = entry.target.getAttribute("id");
+      navLinks.forEach((link) => {
+        link.classList.toggle("active", link.getAttribute("href") === `#${id}`);
+      });
+    });
+  },
+  { threshold: 0.55 }
+);
+
+sections.forEach((section) => sectionObserver.observe(section));
+
+if (themeToggle) {
+  const savedTheme = localStorage.getItem("portfolio-theme");
+  if (savedTheme === "light") {
+    document.body.classList.add("light");
+    themeToggle.textContent = "Dark";
   }
 
-  
-  if (!userEmail.includes("@") || !userEmail.includes(".")) {
-    formMessage.textContent = "That email doesn't look valid.";
-    formMessage.style.color = "#e74c3c";
-    return;
-  }
+  themeToggle.addEventListener("click", () => {
+    document.body.classList.toggle("light");
+    const isLight = document.body.classList.contains("light");
+    themeToggle.textContent = isLight ? "Dark" : "Light";
+    localStorage.setItem("portfolio-theme", isLight ? "light" : "dark");
+  });
+}
 
-  
-  formMessage.textContent = "Thanks! Your message has been sent.";
-  formMessage.style.color = "#2ecc71";
+if (contactForm && formMessage) {
+  contactForm.addEventListener("submit", (event) => {
+    event.preventDefault();
 
-  
-  contactForm.reset();
-});
+    const userName = contactForm.name.value.trim();
+    const userEmail = contactForm.email.value.trim();
+    const userMessage = contactForm.message.value.trim();
+
+    if (!userName || !userEmail || !userMessage) {
+      formMessage.textContent = "Please complete all fields.";
+      formMessage.style.color = "#ef4444";
+      return;
+    }
+
+    const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(userEmail);
+    if (!emailOk) {
+      formMessage.textContent = "Please use a valid email address.";
+      formMessage.style.color = "#ef4444";
+      return;
+    }
+
+    formMessage.textContent = "Message ready. Connect this form to a backend next.";
+    formMessage.style.color = "#22c55e";
+    contactForm.reset();
+  });
+}
