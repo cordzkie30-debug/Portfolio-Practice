@@ -35,6 +35,35 @@ const sectionObserver = new IntersectionObserver(
 
 sections.forEach((section) => sectionObserver.observe(section));
 
+const SCROLL_DELTA = 8;
+let lastScrollY = window.scrollY;
+
+if (nav) {
+  window.addEventListener(
+    "scroll",
+    () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY <= 20) {
+        nav.classList.remove("nav-hidden");
+        lastScrollY = currentScrollY;
+        return;
+      }
+
+      if (!nav.classList.contains("nav-open")) {
+        if (currentScrollY > lastScrollY + SCROLL_DELTA) {
+          nav.classList.add("nav-hidden");
+        } else if (currentScrollY < lastScrollY - SCROLL_DELTA) {
+          nav.classList.remove("nav-hidden");
+        }
+      }
+
+      lastScrollY = currentScrollY;
+    },
+    { passive: true }
+  );
+}
+
 if (menuToggle && nav) {
   menuToggle.addEventListener("click", () => {
     const open = nav.classList.toggle("nav-open");
