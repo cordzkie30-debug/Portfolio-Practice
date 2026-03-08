@@ -455,4 +455,12 @@ footer {
   .hero {
     min-height: 72vh;
   }
+
+  .project-thumb {
+    height: clamp(140px, 42vw, 190px);
+  }
+
+  .project-card {
+    gap: 8px;
+  }
 }
