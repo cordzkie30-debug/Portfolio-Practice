@@ -201,6 +201,8 @@ nav {
 }
 
 .about-card {
+  width: min(1050px, calc(100% - 28px));
+  margin: 0 auto 70px;
   display: grid;
   grid-template-columns: 1fr;
   gap: 22px;
