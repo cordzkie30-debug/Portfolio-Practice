@@ -1,126 +1,413 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ray John Cordero | Portfolio</title>
+  <title>Ray John Cordero | Virtual Assistant & Web Developer</title>
+  <meta
+    name="description"
+    content="Professional portfolio of Ray John Cordero, a Virtual Assistant and Junior Web Developer specializing in websites, landing pages, WordPress, and maintenance."
+  >
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
-
-<body>
-  <div class="ambient-bg" aria-hidden="true"></div>
-
-  <nav>
-    <button class="menu-toggle" id="menuToggle" type="button" aria-label="Toggle menu" aria-expanded="false">Menu</button>
-    <ul class="nav-links">
-      <li><a href="#hero">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle theme">Light</button>
-  </nav>
-
-  <section class="hero section" id="hero">
-    <p class="eyebrow fade-up">Available for entry-level roles</p>
-    <h1 class="fade-up delay-1">Ray John Cordero</h1>
-    <p class="fade-up delay-2 hero-role">Aspiring Web Developer | IT Support | Teller</p>
-    <p class="hero-about fade-up delay-3">
-      I build clean, user-friendly interfaces and enjoy solving technical issues through practical, reliable solutions.
-    </p>
-    <div class="hero-actions fade-up delay-4">
-      <a href="images/RayJohnCordero_Resume.pdf" download class="btn-cv">Download CV</a>
-      <a href="#projects" class="btn-ghost">View Projects</a>
-    </div>
-  </section>
-
-  <section class="about-card reveal" id="about">
-    <img src="images/ray.png" class="avatar" alt="Ray John Cordero">
-    <div class="about-text">
-      <h2>About Me</h2>
-      <p>
-        Hi! I am Ray John, an aspiring Web Developer and IT Support professional with hands-on experience in technical
-        support, as well as hardware and software troubleshooting. I have previously worked in environments where
-        problem-solving, attention to detail, and customer assistance were essential. Alongside my technical support
-        background, I am continuously building my skills in web development and currently learning HTML, CSS, and
-        JavaScript.
-      </p>
-      <div class="stats-row">
-        <article><strong>2+</strong><span>Years IT Support Exposure</span></article>
-        <article><strong>5</strong><span>Core Skills</span></article>
-        <article><strong>100%</strong><span>Growth Mindset</span></article>
+<body data-theme="dark">
+  <div class="page-shell">
+    <nav class="navbar navbar-expand-lg fixed-top custom-navbar">
+      <div class="container">
+        <a class="navbar-brand" href="#home">Ray John Cordero</a>
+        <div class="d-flex align-items-center gap-2 ms-auto ms-lg-0 order-lg-2">
+          <button
+            type="button"
+            class="theme-toggle"
+            id="themeToggle"
+            aria-label="Switch to light mode"
+            title="Toggle theme"
+          >
+            <i class="bi bi-sun-fill theme-icon theme-icon-light"></i>
+            <i class="bi bi-moon-stars-fill theme-icon theme-icon-dark"></i>
+          </button>
+          <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        </div>
+        <div class="collapse navbar-collapse order-lg-1" id="mainNav">
+          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+            <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+            <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            <li class="nav-item mt-3 mt-lg-0">
+              <a class="btn btn-sm btn-outline-light nav-cta" href="#contact">Hire Me</a>
+            </li>
+          </ul>
+        </div>
       </div>
+    </nav>
+
+    <header id="home" class="hero-section">
+      <div class="container">
+        <div class="row align-items-center gy-5">
+          <div class="col-lg-6">
+            <div class="hero-copy reveal">
+              <span class="eyebrow">Virtual Assistant & Web Developer</span>
+              <h1>Ray John Cordero</h1>
+              <p class="hero-title">Virtual Assistant | Junior Web Developer</p>
+              <p class="hero-text">
+                I help businesses build, improve, and maintain modern websites. I specialize in landing pages, WordPress websites, and website maintenance.
+              </p>
+              <div class="hero-actions d-flex flex-wrap gap-3">
+                <a class="btn btn-primary btn-lg" href="#projects">View Projects</a>
+                <a class="btn btn-outline-light btn-lg" href="#contact">Hire Me</a>
+              </div>
+              <div class="hero-highlights row g-3 mt-4">
+                <div class="col-sm-4">
+                  <div class="mini-stat">
+                    <strong>Modern</strong>
+                    <span>Freelancer-ready websites</span>
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="mini-stat">
+                    <strong>Responsive</strong>
+                    <span>Mobile, tablet, desktop</span>
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="mini-stat">
+                    <strong>Reliable</strong>
+                    <span>Updates and maintenance</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="hero-visual reveal">
+              <div class="profile-card">
+                <div class="profile-orbit orbit-one"></div>
+                <div class="profile-orbit orbit-two"></div>
+                <img
+                  src="images/ray.png"
+                  alt="Portrait of Ray John Cordero"
+                  class="img-fluid profile-image lightbox-trigger"
+                  data-lightbox-image="images/ray.png"
+                  data-lightbox-alt="Portrait of Ray John Cordero"
+                  tabindex="0"
+                  role="button"
+                  aria-label="Open hero image in lightbox"
+                >
+                <div class="floating-badge badge-one">
+                  <i class="bi bi-code-slash"></i>
+                  <span>Web Build</span>
+                </div>
+                <div class="floating-badge badge-two">
+                  <i class="bi bi-wordpress"></i>
+                  <span>WordPress</span>
+                </div>
+                <div class="floating-badge badge-three">
+                  <i class="bi bi-gear-wide-connected"></i>
+                  <span>Maintenance</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="about" class="section-space">
+        <div class="container">
+          <div class="row align-items-center g-5">
+            <div class="col-lg-5">
+              <div class="about-photo-card reveal">
+                <img
+                  src="images/rj.png"
+                  alt="Ray John Cordero profile"
+                  class="img-fluid rounded-4 lightbox-trigger"
+                  data-lightbox-image="images/rj.png"
+                  data-lightbox-alt="Ray John Cordero profile"
+                  tabindex="0"
+                  role="button"
+                  aria-label="Open about image in lightbox"
+                >
+              </div>
+            </div>
+            <div class="col-lg-7">
+              <div class="section-heading reveal">
+                <span class="eyebrow">About Me</span>
+                <h2>Helping businesses stay visible, polished, and up to date online.</h2>
+                <p>
+                  I am a junior web developer transitioning into a technical virtual assistant role focused on websites. My work combines hands-on web development skills with dependable support for website updates, WordPress management, landing page creation, and day-to-day maintenance that helps businesses keep a strong online presence.
+                </p>
+                <p>
+                  I enjoy building clean, responsive pages and supporting clients with practical website tasks that improve usability, presentation, and performance.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills" class="section-space section-muted">
+        <div class="container">
+          <div class="section-heading text-center reveal">
+            <span class="eyebrow">Skills & Tools</span>
+            <h2>Technical support with a builder's mindset.</h2>
+            <p>From design updates to WordPress management, I focus on practical skills that help businesses launch and maintain better websites.</p>
+          </div>
+          <div class="row g-4 mt-2">
+            <div class="col-lg-4">
+              <div class="info-card reveal">
+                <h3>Technical Skills</h3>
+                <div class="chip-group">
+                  <span>HTML5</span>
+                  <span>CSS3</span>
+                  <span>Bootstrap</span>
+                  <span>Basic PHP</span>
+                  <span>Responsive Web Design</span>
+                  <span>Landing Page Development</span>
+                  <span>Website Editing & Updates</span>
+                  <span>WordPress Management</span>
+                  <span>Website Maintenance</span>
+                  <span>Basic SEO Optimization</span>
+                  <span>GitHub & Code Management</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="info-card reveal">
+                <h3>Virtual Assistant Skills</h3>
+                <div class="chip-group">
+                  <span>Website Management</span>
+                  <span>Data Entry</span>
+                  <span>Online Research</span>
+                  <span>Content Uploading</span>
+                  <span>Email Communication</span>
+                  <span>Task Management</span>
+                  <span>File Organization</span>
+                  <span>Social Media Assistance</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="info-card reveal">
+                <h3>Tools I Use</h3>
+                <div class="chip-group">
+                  <span>Visual Studio Code</span>
+                  <span>WordPress</span>
+                  <span>Elementor</span>
+                  <span>GitHub</span>
+                  <span>Google Workspace</span>
+                  <span>Canva</span>
+                  <span>Trello</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" class="section-space">
+        <div class="container">
+          <div class="section-heading text-center reveal">
+            <span class="eyebrow">Services</span>
+            <h2>Flexible website support for growing businesses.</h2>
+          </div>
+          <div class="row g-4 mt-2">
+            <div class="col-md-6 col-xl-3">
+              <article class="service-card reveal">
+                <div class="service-icon"><i class="bi bi-window-stack"></i></div>
+                <h3>Landing Page Development</h3>
+                <p>Creating modern responsive landing pages for businesses using HTML, CSS, and Bootstrap.</p>
+              </article>
+            </div>
+            <div class="col-md-6 col-xl-3">
+              <article class="service-card reveal">
+                <div class="service-icon"><i class="bi bi-wordpress"></i></div>
+                <h3>WordPress Website Setup</h3>
+                <p>Setting up professional WordPress websites for small businesses.</p>
+              </article>
+            </div>
+            <div class="col-md-6 col-xl-3">
+              <article class="service-card reveal">
+                <div class="service-icon"><i class="bi bi-tools"></i></div>
+                <h3>Website Maintenance</h3>
+                <p>Updating website content, fixing layout issues, and maintaining website performance.</p>
+              </article>
+            </div>
+            <div class="col-md-6 col-xl-3">
+              <article class="service-card reveal">
+                <div class="service-icon"><i class="bi bi-bezier2"></i></div>
+                <h3>Website Redesign</h3>
+                <p>Improving the design and responsiveness of outdated websites.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="section-space section-muted">
+        <div class="container">
+          <div class="section-heading text-center reveal">
+            <span class="eyebrow">Portfolio Projects</span>
+            <h2>Sample work aligned with client-focused website needs.</h2>
+          </div>
+          <div class="row g-4 mt-2">
+            <div class="col-md-6 col-xl-3">
+              <article class="project-card reveal">
+                <div class="project-preview gradient-one">
+                  <span>Business Landing Page</span>
+                </div>
+                <div class="project-body">
+                  <h3>Business Landing Page</h3>
+                  <p>A clean conversion-focused page designed to present services clearly and generate inquiries.</p>
+                  <small>HTML5 • CSS3 • Bootstrap 5</small>
+                </div>
+              </article>
+            </div>
+            <div class="col-md-6 col-xl-3">
+              <article class="project-card reveal">
+                <div
+                  class="project-preview gradient-two"
+                  style="background-image: linear-gradient(rgba(154, 52, 18, 0.35), rgba(124, 45, 18, 0.55)), url('images/eltrio.jpg'); background-size: cover; background-position: center;"
+                >
+                  <span>Restaurant Website</span>
+                </div>
+                <div class="project-body">
+                  <h3>Restaurant Website</h3>
+                  <p>A visually engaging restaurant site with menu highlights, reservation prompts, and mobile-friendly layouts.</p>
+                  <small>HTML5 • Bootstrap 5 • JavaScript</small>
+                  <div class="mt-3">
+                    <a href="https://cordzkie30-debug.github.io/EltrioCafe-kandingan/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary">View Project</a>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div class="col-md-6 col-xl-3">
+              <article class="project-card reveal">
+                <div class="project-preview gradient-three">
+                  <span>Portfolio Website</span>
+                </div>
+                <div class="project-body">
+                  <h3>Portfolio Website</h3>
+                  <p>A personal branding website built to showcase services, experience, and project samples professionally.</p>
+                  <small>HTML5 • CSS3 • Responsive Design</small>
+                </div>
+              </article>
+            </div>
+            <div class="col-md-6 col-xl-3">
+              <article class="project-card reveal">
+                <div class="project-preview gradient-four">
+                  <span>Website Redesign Project</span>
+                </div>
+                <div class="project-body">
+                  <h3>Website Redesign Project</h3>
+                  <p>An outdated layout refreshed with modern spacing, better typography, and improved responsiveness.</p>
+                  <small>WordPress • Elementor • UI Refresh</small>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section-space">
+        <div class="container">
+          <div class="contact-panel reveal">
+            <div class="row g-4 align-items-center">
+              <div class="col-lg-5">
+                <span class="eyebrow">Contact</span>
+                <h2>Let's work together to build or improve your website.</h2>
+                <p>
+                  If you need a dependable virtual assistant for website tasks or a junior web developer to help build and improve your site, I would be glad to support your business.
+                </p>
+                <div class="contact-list">
+                  <a href="mailto:Cordzkie30@gmail.com"><i class="bi bi-envelope"></i> Cordzkie30@gmail.com</a>
+                  <a href="https://github.com/cordzkie30-debug" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i> GitHub Profile</a>
+                  <a href="https://www.linkedin.com/in/ray-john-cordero-729ab7266/" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin"></i> LinkedIn Profile</a>
+                </div>
+              </div>
+              <div class="col-lg-7">
+                <form
+                  class="contact-form reveal"
+                  name="contact"
+                  method="POST"
+                  data-netlify="true"
+                  netlify-honeypot="bot-field"
+                  novalidate
+                >
+                  <input type="hidden" name="form-name" value="contact">
+                  <input type="hidden" name="bot-field">
+                  <div class="row g-3">
+                    <div class="col-md-6">
+                      <label for="name" class="form-label">Name</label>
+                      <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
+                      <div class="invalid-feedback">Please enter your name.</div>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="email" class="form-label">Email</label>
+                      <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+                      <div class="invalid-feedback">Please enter a valid email address.</div>
+                    </div>
+                    <div class="col-12">
+                      <label for="subject" class="form-label">Subject</label>
+                      <input type="text" class="form-control" id="subject" name="subject" placeholder="How can I help you?">
+                    </div>
+                    <div class="col-12">
+                      <label for="message" class="form-label">Message</label>
+                      <textarea class="form-control" id="message" name="message" rows="5" placeholder="Tell me about your website project or support needs." required></textarea>
+                      <div class="invalid-feedback">Please enter your message.</div>
+                    </div>
+                    <div class="col-12">
+                      <div class="form-alert form-alert-success d-none" role="status" aria-live="polite">
+                        Thank you! Your message has been sent. I will get back to you within 24 hours.
+                      </div>
+                      <div class="form-alert form-alert-error d-none" role="alert">
+                        Something went wrong while sending your message. Please try again.
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <button type="submit" class="btn btn-primary btn-lg w-100">Send Message</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+        <p class="mb-0">© 2026 Ray John Cordero. Virtual Assistant & Junior Web Developer.</p>
+        <div class="footer-links d-flex gap-3">
+          <a href="https://github.com/cordzkie30-debug" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://www.linkedin.com/in/ray-john-cordero-729ab7266/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="mailto:Cordzkie30@gmail.com">Email</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <div class="lightbox-modal" id="imageLightbox" aria-hidden="true">
+    <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Close image preview">
+      <i class="bi bi-x-lg"></i>
+    </button>
+    <div class="lightbox-backdrop" id="lightboxBackdrop"></div>
+    <div class="lightbox-content" role="dialog" aria-modal="true" aria-label="Image preview">
+      <img src="" alt="" id="lightboxImage">
     </div>
-  </section>
+  </div>
 
-  <section class="section skills-section reveal" id="skills">
-    <h2>Skills</h2>
-    <ul class="skills">
-      <li>HTML</li>
-      <li>CSS</li>
-      <li>JavaScript</li>
-      <li>Computer Troubleshooting</li>
-      <li>Technical Support</li>
-    </ul>
-  </section>
-
-  <section class="section projects-section reveal" id="projects">
-    <h2>Projects</h2>
-    <div class="project-grid">
-      <article class="project-card">
-        <img src="images/home.jpg" alt="Ray's Brew project preview" class="project-thumb">
-        <h3>Ray's Brew - Milk Tea Shop Website</h3>
-        <p>
-          A mini e-commerce style website where users can browse milk tea products,
-          add items to a cart, and proceed to checkout. The project demonstrates
-          dynamic cart functionality using JavaScript and localStorage.
-        </p>
-        <span>HTML / CSS / JavaScript</span>
-        <a href="https://cordzkie30-debug.github.io/Rays-Brew/" class="project-link" target="_blank" rel="noopener noreferrer">Live Demo</a>
-      </article>
-      <article class="project-card">
-        <h3>Landing Page Practice</h3>
-        <p>Modern hero layout exploration with responsive grid and hover transitions.</p>
-        <span>CSS Layouts</span>
-      </article>
-      <article class="project-card">
-        <h3>Support Workflow Notes</h3>
-        <p>Documented troubleshooting steps for common software and hardware issues.</p>
-        <span>IT Support</span>
-      </article>
-    </div>
-  </section>
-
-  <section class="section contact-section reveal" id="contact">
-    <h2>Contact Me</h2>
-    <p>
-      I am open to opportunities and collaborations. Send me a message and I will reply as soon as possible.
-    </p>
-
-    <form class="contact-form" id="contactForm">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-      <button type="submit">Send Message</button>
-      <p id="formStatus" aria-live="polite"></p>
-    </form>
-
-    <div class="contact-info">
-      <p>Email: <a href="mailto:rayjohn@email.com">rayjohn@email.com</a></p>
-      <p>LinkedIn: <a href="https://linkedin.com/in/rayjohn" target="_blank" rel="noopener noreferrer">linkedin.com/in/rayjohn</a></p>
-    </div>
-  </section>
-
-  <footer>
-    <p>&copy; 2026 Ray John Cordero</p>
-  </footer>
-
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="script.js"></script>
 </body>
-
 </html>
